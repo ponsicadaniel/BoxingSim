@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<style>
+    body{
+        font-family: "Trebuchet MS", "Helvetica", sans-serif;
+    }
+    
+.newGameHover {
+    display: none; 
+    position: fixed ; 
+    z-index: 1;  
+    padding-top: 100px; 
+    left: 50%;
+    top: 50%;
+    width: 50%; 
+    height: 50%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0); 
+    transform: translate(-50%, -50%);
+}
+
+.hoverContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #1111;
+    text-decoration: none;
+    cursor: pointer;
+}
+    
+</style>
+
+<html>
+    <body>
+        
+        <h1 align="center">World Boxing Championships</h1>
+        
+        <table style="margin-left:auto;margin-right:auto;">
+            
+        
+            <p align="center"><button align="center" id="newMatch" onclick="openHT()">New Match!</button></p>
+            
+        <div id="$newMatch" class="newGameHover">
+            <div class="hoverContent">
+                <span class="close">&times;</span>
+                <h4 align="center">New Match Started! Let's flip a coin to decide who goes first.</h4>
+                <p align="center">
+                    <button id="Heads" onclick="chooseHeads()">Heads</button> or 
+                    <button id="Tails" onclick="chooseTails()">Tails</button>
+                </p>
+            </div>
+        </div>
+
+            <tr>
+                <td align="center" width=350><img id="character" src="images/PlayerDef.png" height="75%"></td>
+                <td align="center" width=350><img id="opponent" src="images/OppDef.png" height="75%"></td>
+            </tr>
+            <tr>
+                <td align="center" width=250>Character</td>
+                <td align="center" width=250>Opponent</td>
+            </tr>
+            <tr>
+                <td align="center"><h4 id="displayUserHealth">Health: 100</h4></td>
+                <td align="center"><h4 id="displayOppHealth">Health: 100</h4></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" onclick="attack()" value="Attack"></td>
+                <td align="center"><input type="button" onclick="defend()" value="Defend"></td>
+            </tr>
+            <tr>
+                <td align="center"><h4 id="userLog"></h4></td>
+                <td align="center"><h4 id="oppLog"></h4></td>
+            </tr>
+        </table>
+        
+        <h3 align="center" id="result"></h3>
+
+        </body>
+
+    <script src="boxing.js"></script>
+
+</html>
